@@ -19,11 +19,14 @@ Updated the exercise with a decrementing button, showing the time the counter ge
 
 # Questions to explore
 1. Where are each of the three components of the MVC framework found in this application?
+
 Model is found in in `counter.rb`
 Views is handled in `index.erb`
 Controller is in `app.rb`
 
 2. What parts of the code run when we run the app in our browser? You could test your assumption by adding `p` lines and checking that you see the output you expect.
+
+
 The an instance of the Counter class counter is running, when you but `p @counter` inside the '/' route you get an output like below when the app is running in the browser and the user is pressing the increment button:
 ```
 #<Counter:0x00007ffae8a2e2f8 @count=0>
@@ -36,6 +39,8 @@ The an instance of the Counter class counter is running, when you but `p @counte
 ```
 
 3. What part of the code runs when we click the "Increment" button?
+
+
 The `increment` method in the Counter class runs on a new instance of itself running `@count += 1` 
 
 4. Can you add a "Decrement" button which decreases the count by 1 each time it is pressed?
