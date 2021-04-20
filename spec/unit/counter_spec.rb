@@ -15,4 +15,29 @@ describe Counter do
       expect(counter.count).to eq 1
     end
   end
+
+  describe '#decrement' do
+    it 'takes 1 away from the count' do
+      counter = Counter.new
+      counter.decrement
+      expect(counter.count).to eq -1
+    end 
+  end 
+
+  describe '#time_update' do
+    it 'updates the time when the counter is changed' do
+      counter = Counter.new
+      counter.increment
+      expect(counter.time_update).to eq "The count was last updated at #{Time.now.strftime("%I:%M %p")}"
+    end 
+  end
+
+  describe '#reset' do
+    it 'resets the counter to 0' do
+      counter = Counter.new
+      counter.increment
+      counter.reset
+      expect(counter.count).to eq 0
+    end 
+  end 
 end
